@@ -22,11 +22,11 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
         'w-full'
       )}
     >
-      {/* --- التعديلات هنا --- */}
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
+          {/* --- التعديل هنا --- */}
           {/* تم تغيير رابط الصورة إلى الشعار الجديد */}
-          <img src="https://i.ibb.co/L67YgN3/DH-logo.png" alt="شعار مساعد الساعدي" className="w-8 h-8 ml-2" />
+          <img src="https://i.ibb.co/r2nBthst/20250719-091015.png" alt="شعار مساعد الساعدي" className="w-8 h-8 ml-2" />
           <span className="text-lg font-semibold">مساعد الساعدي</span>
         </Link>
       </div>
