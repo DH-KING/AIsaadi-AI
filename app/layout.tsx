@@ -8,20 +8,24 @@ import { createClient } from '@/lib/supabase/server'
 import { cn } from '@/lib/utils'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter as FontSans } from 'next/font/google'
+// لاستخدام خط عربي جميل (اختياري، لكن موصى به)
+import { Cairo } from 'next/font/google'
 import './globals.css'
 
-const fontSans = FontSans({
-  subsets: ['latin'],
+// إعداد الخط العربي
+const fontCairo = Cairo({
+  subsets: ['arabic'],
   variable: '--font-sans'
 })
 
-const title = 'Morphic'
+// --- التعديلات هنا ---
+const title = 'مساعد الساعدي'
 const description =
-  'A fully open-source AI-powered answer engine with a generative UI.'
+  'محرك إجابات مدعوم بالذكاء الاصطناعي، مفتوح المصدر بالكامل.'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://morphic.sh'),
+  // يمكنك تغيير هذا الرابط لاحقًا إلى رابط موقعك النهائي
+  metadataBase: new URL('https://vercel.com'),
   title,
   description,
   openGraph: {
@@ -32,7 +36,8 @@ export const metadata: Metadata = {
     title,
     description,
     card: 'summary_large_image',
-    creator: '@miiura'
+    // تغيير اسم المنشئ إلى اسمك
+    creator: 'مساعد الساعدي'
   }
 }
 
@@ -61,11 +66,13 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    // تغيير اتجاه ولغة الموقع إلى العربية
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body
         className={cn(
           'min-h-screen flex flex-col font-sans antialiased',
-          fontSans.variable
+          // تطبيق الخط العربي
+          fontCairo.variable
         )}
       >
         <ThemeProvider
