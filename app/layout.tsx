@@ -18,12 +18,17 @@ const fontCairo = Cairo({
   variable: '--font-sans'
 })
 
-// --- التعديلات هنا ---
 const title = 'مساعد الساعدي'
 const description =
   'محرك إجابات مدعوم بالذكاء الاصطناعي، مفتوح المصدر بالكامل.'
 
 export const metadata: Metadata = {
+  // --- التعديل هنا ---
+  icons: {
+    icon: '/favicon-DH.ico', // تم تغيير مسار الأيقونة هنا
+  },
+  // --------------------
+
   // يمكنك تغيير هذا الرابط لاحقًا إلى رابط موقعك النهائي
   metadataBase: new URL('https://vercel.com'),
   title,
