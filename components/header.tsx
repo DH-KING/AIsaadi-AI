@@ -3,10 +3,9 @@
 import { useSidebar } from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
 import { User } from '@supabase/supabase-js'
-// import Link from 'next/link' // No longer needed directly here for Sign In button
+import Link from 'next/link' // قمنا بإضافة هذا السطر
 import React from 'react'
-// import { Button } from './ui/button' // No longer needed directly here for Sign In button
-import GuestMenu from './guest-menu' // Import the new GuestMenu component
+import GuestMenu from './guest-menu'
 import UserMenu from './user-menu'
 
 interface HeaderProps {
@@ -23,8 +22,15 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
         'w-full'
       )}
     >
-      {/* This div can be used for a logo or title on the left if needed */}
-      <div></div>
+      {/* --- التعديلات هنا --- */}
+      {/* هذا الجزء سيحتوي على الشعار والاسم */}
+      <div className="flex items-center">
+        <Link href="/" className="flex items-center">
+          {/* يمكنك تغيير رابط الصورة لاحقًا */}
+          <img src="https://i.ibb.co/pWkC9jT/manga-saadi-logo.png" alt="شعار مساعد الساعدي" className="w-8 h-8 ml-2" />
+          <span className="text-lg font-semibold">مساعد الساعدي</span>
+        </Link>
+      </div>
 
       <div className="flex items-center gap-2">
         {user ? <UserMenu user={user} /> : <GuestMenu />}
