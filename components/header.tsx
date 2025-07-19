@@ -3,7 +3,7 @@
 import { useSidebar } from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
 import { User } from '@supabase/supabase-js'
-import Link from 'next/link' // قمنا بإضافة هذا السطر
+import Link from 'next/link'
 import React from 'react'
 import GuestMenu from './guest-menu'
 import UserMenu from './user-menu'
@@ -23,11 +23,10 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
       )}
     >
       {/* --- التعديلات هنا --- */}
-      {/* هذا الجزء سيحتوي على الشعار والاسم */}
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
-          {/* يمكنك تغيير رابط الصورة لاحقًا */}
-          <img src="https://i.ibb.co/pWkC9jT/manga-saadi-logo.png" alt="شعار مساعد الساعدي" className="w-8 h-8 ml-2" />
+          {/* تم تغيير رابط الصورة إلى الشعار الجديد */}
+          <img src="https://i.ibb.co/L67YgN3/DH-logo.png" alt="شعار مساعد الساعدي" className="w-8 h-8 ml-2" />
           <span className="text-lg font-semibold">مساعد الساعدي</span>
         </Link>
       </div>
